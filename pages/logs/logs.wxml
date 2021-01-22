@@ -1,0 +1,8 @@
+<!--logs.wxml-->
+<!-- <view class="container log-list"> -->
+  <block wx:for="{{logs}}" wx:key="key">
+    <view>
+      {{index+1}}：{{item.date}}，分数：{{item.add}}
+    </view>
+  </block>
+<!-- </view> -->

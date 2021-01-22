@@ -1,0 +1,9 @@
+<view wx:if="{{!openid}}" >
+  <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo"
+    lang="zh_CN">登陆</button>
+</view>
+
+<view wx:if="{{openid}}" class="uploader-container">
+  <image class="image" src="{{userinfo.avatarUrl}}"></image>
+  <view class="name">{{userinfo.nickName}}</view>
+</view>

@@ -1,0 +1,18 @@
+button{
+  background-color: tomato;
+  width:60%;
+  margin-top:200rpx;
+  color: #ffffff;
+}
+
+.image{
+  display: block;
+  margin: 40rpx auto;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.name{
+  text-align: center;
+  padding-top: 20rpx;
+}

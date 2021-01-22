@@ -1,0 +1,31 @@
+Page({
+  data:{
+    userinfo:{},
+    openid:''
+  },
+  onGotUserInfo(e){
+    wx.cloud.callFunction({
+      name:"login",
+      success:res=>{
+        console.log("云函数调用成功")
+        this.setData({
+          openid:res.result.openid,
+          userinfo:e.detail.userInfo
+        })
+        this.data.userinfo.openid=this.data.openid
+        console.log("userinfo:",this.data.userinfo)
+        wx.setStorageSync('userinfo', this.data.userinfo)
+      },
+      fail:err=>{
+        console.log("云函数调用失败")
+      }
+    })
+  },
+  onLoad(options){
+    const ui = wx.getStorageSync('userinfo')
+    this.setData({
+      userinfo:ui,
+      openid:ui.openid
+    })
+  }
+})
